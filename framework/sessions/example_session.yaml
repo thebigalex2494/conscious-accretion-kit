@@ -1,0 +1,40 @@
+# Session Definition — Conscious Accretion Kit
+#
+# Sessions pre-load context for focused agent work.
+# Convention: YYYY-MM-DD_A{N}_{project_slug}.yaml
+#
+# The agent reads this file at session start, loads all context_files,
+# follows tasks in sequence, and adheres to rules.
+
+session:
+  id: "A1-2026-04-01"
+  name: "Example Session — Code Audit"
+  status: pending       # pending | in_progress | completed
+  priority: HIGH        # LOW | MEDIUM | HIGH | CRITICAL
+
+project:
+  name: "My Project"
+  registry_id: "proj-001"
+  working_dir: "path/to/your/project"
+
+context_files:
+  # Files the agent MUST read before starting work
+  - path: "README.md"
+    purpose: "Project overview and architecture"
+  - path: "ARCHITECTURE.md"
+    purpose: "Technical architecture details"
+  # Add more files relevant to the session's focus
+
+tasks:
+  - id: T1
+    name: "Audit code quality"
+    done_when: "Quality report generated with grade"
+  - id: T2
+    name: "Identify improvement opportunities"
+    done_when: "Prioritized list of improvements"
+
+rules:
+  # Session-specific constraints
+  - "NO file modifications — audit only"
+  - "Report findings in user's preferred language"
+  - "Use quality-gates grading scale (A+ to F)"

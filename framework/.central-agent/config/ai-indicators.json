@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "python_packages": {
+    "llm_providers": [
+      "anthropic",
+      "openai",
+      "google-generativeai",
+      "cohere",
+      "replicate",
+      "together",
+      "groq"
+    ],
+    "frameworks": [
+      "langchain",
+      "langchain-core",
+      "langchain-community",
+      "llama-index",
+      "haystack-ai",
+      "semantic-kernel",
+      "autogen",
+      "crewai"
+    ],
+    "ml_deep_learning": [
+      "torch",
+      "pytorch",
+      "tensorflow",
+      "keras",
+      "jax",
+      "flax"
+    ],
+    "transformers": [
+      "transformers",
+      "sentence-transformers",
+      "huggingface-hub",
+      "datasets",
+      "tokenizers",
+      "accelerate",
+      "peft",
+      "trl"
+    ],
+    "vector_stores": [
+      "chromadb",
+      "pinecone-client",
+      "weaviate-client",
+      "qdrant-client",
+      "milvus",
+      "faiss-cpu",
+      "faiss-gpu",
+      "lancedb"
+    ],
+    "local_inference": [
+      "ollama",
+      "llama-cpp-python",
+      "ctransformers",
+      "vllm",
+      "text-generation-inference"
+    ],
+    "data_science": [
+      "pandas",
+      "numpy",
+      "scikit-learn",
+      "scipy",
+      "matplotlib",
+      "seaborn",
+      "plotly"
+    ]
+  },
+  "javascript_packages": {
+    "llm_providers": [
+      "@anthropic-ai/sdk",
+      "openai",
+      "@google/generative-ai",
+      "cohere-ai"
+    ],
+    "frameworks": [
+      "langchain",
+      "@langchain/core",
+      "@langchain/community",
+      "llamaindex"
+    ],
+    "vector_stores": [
+      "@pinecone-database/pinecone",
+      "chromadb",
+      "@qdrant/js-client-rest"
+    ]
+  },
+  "directory_indicators": {
+    "strong": [
+      "models",
+      "notebooks",
+      "prompts",
+      "chains",
+      "agents",
+      "embeddings",
+      "vectorstore"
+    ],
+    "moderate": [
+      "data",
+      "training",
+      "inference",
+      "fine-tuning",
+      "experiments"
+    ],
+    "with_subdirs": {
+      "data": ["raw", "processed", "output"],
+      "models": ["checkpoints", "saved", "exported"]
+    }
+  },
+  "file_indicators": {
+    "config_files": [
+      ".env",
+      "config.yaml",
+      "config.json",
+      "model_config.json",
+      "training_config.yaml"
+    ],
+    "model_files": [
+      "*.pt",
+      "*.pth",
+      "*.h5",
+      "*.keras",
+      "*.onnx",
+      "*.safetensors",
+      "*.bin",
+      "*.pkl"
+    ],
+    "notebooks": [
+      "*.ipynb"
+    ],
+    "claude_specific": [
+      ".claude/CLAUDE.md",
+      "claude.yaml",
+      "anthropic.yaml"
+    ]
+  },
+  "env_variables": [
+    "ANTHROPIC_API_KEY",
+    "OPENAI_API_KEY",
+    "GOOGLE_API_KEY",
+    "COHERE_API_KEY",
+    "HUGGINGFACE_TOKEN",
+    "HF_TOKEN",
+    "PINECONE_API_KEY",
+    "REPLICATE_API_TOKEN"
+  ],
+  "project_types": {
+    "ml-training": {
+      "indicators": ["models/", "training scripts", "checkpoints/"],
+      "typical_stack": ["pytorch", "transformers", "wandb"]
+    },
+    "llm-app": {
+      "indicators": ["langchain", "prompts/", "chains/"],
+      "typical_stack": ["langchain", "openai/anthropic", "fastapi"]
+    },
+    "rag-system": {
+      "indicators": ["vector store", "embeddings", "document loaders"],
+      "typical_stack": ["langchain", "chromadb", "sentence-transformers"]
+    },
+    "fine-tuning": {
+      "indicators": ["peft", "lora", "training configs"],
+      "typical_stack": ["transformers", "peft", "trl", "accelerate"]
+    },
+    "agent-system": {
+      "indicators": ["agents/", "tools/", "orchestration"],
+      "typical_stack": ["langchain", "autogen", "crewai"]
+    },
+    "data-pipeline": {
+      "indicators": ["etl", "data/", "transformations"],
+      "typical_stack": ["pandas", "dask", "prefect"]
+    }
+  }
+}

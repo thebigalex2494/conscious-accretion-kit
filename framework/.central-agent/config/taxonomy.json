@@ -1,0 +1,135 @@
+{
+  "version": "1.0.0",
+  "categories": {
+    "code": {
+      "extensions": {
+        ".py": {"language": "Python", "destination": "code/python"},
+        ".ts": {"language": "TypeScript", "destination": "code/web"},
+        ".tsx": {"language": "TypeScript React", "destination": "code/web"},
+        ".js": {"language": "JavaScript", "destination": "code/web"},
+        ".jsx": {"language": "JavaScript React", "destination": "code/web"},
+        ".ps1": {"language": "PowerShell", "destination": "scripts/maintenance"},
+        ".sh": {"language": "Shell", "destination": "scripts"},
+        ".sql": {"language": "SQL", "destination": "code/database"},
+        ".go": {"language": "Go", "destination": "code/backend"},
+        ".rs": {"language": "Rust", "destination": "code/systems"},
+        ".cs": {"language": "C#", "destination": "code/apps"}
+      }
+    },
+    "config": {
+      "extensions": {
+        ".json": {"type": "JSON", "destination": "config"},
+        ".yaml": {"type": "YAML", "destination": "config"},
+        ".yml": {"type": "YAML", "destination": "config"},
+        ".toml": {"type": "TOML", "destination": "config"},
+        ".ini": {"type": "INI", "destination": "config"},
+        ".env": {"type": "Environment", "destination": null, "sensitive": true}
+      }
+    },
+    "data": {
+      "extensions": {
+        ".csv": {"type": "CSV", "destination": null},
+        ".parquet": {"type": "Parquet", "destination": null},
+        ".xlsx": {"type": "Excel", "destination": "Documents"},
+        ".jsonl": {"type": "JSON Lines", "destination": null}
+      }
+    },
+    "models": {
+      "extensions": {
+        ".pt": {"framework": "PyTorch", "destination": null},
+        ".pth": {"framework": "PyTorch", "destination": null},
+        ".h5": {"framework": "TensorFlow/Keras", "destination": null},
+        ".keras": {"framework": "Keras", "destination": null},
+        ".onnx": {"framework": "ONNX", "destination": null},
+        ".pkl": {"type": "Pickle", "destination": null},
+        ".safetensors": {"framework": "SafeTensors", "destination": null}
+      },
+      "note": "Model files should stay with their project"
+    },
+    "notebooks": {
+      "extensions": {
+        ".ipynb": {"type": "Jupyter", "destination": "notebooks"}
+      }
+    },
+    "documents": {
+      "extensions": {
+        ".pdf": {"type": "PDF", "destination": "Documents"},
+        ".docx": {"type": "Word", "destination": "Documents"},
+        ".doc": {"type": "Word Legacy", "destination": "Documents"},
+        ".pptx": {"type": "PowerPoint", "destination": "Documents"},
+        ".md": {"type": "Markdown", "destination": "docs"},
+        ".rst": {"type": "reStructuredText", "destination": "docs"},
+        ".txt": {"type": "Text", "destination": "Documents"}
+      },
+      "patterns": [
+        {"match": "*factura*", "subcategory": "Financial", "destination": "Documents/Financial"},
+        {"match": "*invoice*", "subcategory": "Financial", "destination": "Documents/Financial"},
+        {"match": "*contrato*", "subcategory": "Legal", "destination": "Documents/Legal"},
+        {"match": "*contract*", "subcategory": "Legal", "destination": "Documents/Legal"},
+        {"match": "*agreement*", "subcategory": "Legal", "destination": "Documents/Legal"},
+        {"match": "*reporte*", "subcategory": "Reports", "destination": "Documents/Reports"},
+        {"match": "*report*", "subcategory": "Reports", "destination": "Documents/Reports"},
+        {"match": "*propuesta*", "subcategory": "Proposals", "destination": "Documents/Proposals"},
+        {"match": "*proposal*", "subcategory": "Proposals", "destination": "Documents/Proposals"},
+        {"match": "*cotizacion*", "subcategory": "Quotes", "destination": "Documents/Quotes"},
+        {"match": "*quote*", "subcategory": "Quotes", "destination": "Documents/Quotes"}
+      ]
+    },
+    "media": {
+      "extensions": {
+        ".jpg": {"type": "Image", "destination": "Pictures"},
+        ".jpeg": {"type": "Image", "destination": "Pictures"},
+        ".png": {"type": "Image", "destination": "Pictures"},
+        ".gif": {"type": "Image", "destination": "Pictures"},
+        ".webp": {"type": "Image", "destination": "Pictures"},
+        ".svg": {"type": "Vector", "destination": "Pictures/Vectors"},
+        ".mp4": {"type": "Video", "destination": "Videos"},
+        ".mov": {"type": "Video", "destination": "Videos"},
+        ".avi": {"type": "Video", "destination": "Videos"},
+        ".mp3": {"type": "Audio", "destination": "Music"},
+        ".wav": {"type": "Audio", "destination": "Music"},
+        ".flac": {"type": "Audio", "destination": "Music"}
+      }
+    },
+    "archives": {
+      "extensions": {
+        ".zip": {"type": "ZIP", "destination": "Downloads/Archives"},
+        ".rar": {"type": "RAR", "destination": "Downloads/Archives"},
+        ".7z": {"type": "7-Zip", "destination": "Downloads/Archives"},
+        ".tar": {"type": "TAR", "destination": "Downloads/Archives"},
+        ".gz": {"type": "GZip", "destination": "Downloads/Archives"},
+        ".tar.gz": {"type": "TGZ", "destination": "Downloads/Archives"}
+      }
+    },
+    "executables": {
+      "extensions": {
+        ".exe": {"type": "Executable", "destination": null, "alert": true},
+        ".msi": {"type": "Installer", "destination": "Downloads/Installers"},
+        ".iso": {"type": "Disk Image", "destination": "Downloads/ISOs"},
+        ".img": {"type": "Disk Image", "destination": "Downloads/ISOs"}
+      },
+      "patterns": [
+        {"match": "*Setup*", "subcategory": "Installer", "destination": "Downloads/Installers"},
+        {"match": "*Install*", "subcategory": "Installer", "destination": "Downloads/Installers"},
+        {"match": "*Portable*", "subcategory": "Portable", "destination": "Downloads/Portable"}
+      ]
+    }
+  },
+  "sensitive_patterns": [
+    "*password*",
+    "*credential*",
+    "*secret*",
+    "*api_key*",
+    "*apikey*",
+    "*token*",
+    "*.pem",
+    "*.key",
+    "*.pfx",
+    "*.p12",
+    ".env",
+    ".env.*",
+    "id_rsa*",
+    "*.keystore"
+  ],
+  "large_file_threshold_mb": 100
+}

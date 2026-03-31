@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "detection": {
+    "method": "hostname",
+    "env_var": "COMPUTERNAME",
+    "fallback_profile": "[YOUR_PRIMARY_HOSTNAME]"
+  },
+  "profiles": {
+    "[YOUR_PRIMARY_HOSTNAME]": {
+      "alias": "Primary",
+      "user": "[YOUR_USERNAME]",
+      "role": "executor",
+      "ram_gb": 32,
+      "drive_letter": "C",
+      "workspace_root": "[YOUR_WORKSPACE_PATH]",
+      "ollama_available": true,
+      "ollama_models": {
+        "primary": "deepseek-coder-v2",
+        "fallback": "llama3",
+        "_note": "Adjust based on your available VRAM and RAM"
+      },
+      "capabilities": [
+        "heavy-compute",
+        "ollama",
+        "gpu",
+        "browser-mcp"
+      ]
+    },
+    "[YOUR_SECONDARY_HOSTNAME]": {
+      "alias": "Secondary",
+      "user": "[YOUR_USERNAME]",
+      "role": "supervisor",
+      "ram_gb": 8,
+      "drive_letter": "C",
+      "workspace_root": "[YOUR_WORKSPACE_PATH]",
+      "ollama_available": true,
+      "ollama_models": {
+        "primary": "llama3",
+        "_note": "Lighter models for constrained hardware"
+      },
+      "capabilities": [
+        "interactive",
+        "browser-mcp",
+        "ollama-light"
+      ]
+    }
+  }
+}
